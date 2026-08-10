@@ -1,4 +1,5 @@
 from langchain_openai import ChatOpenAI
+from langchain_core.messages import HumanMessage
 
 
 llm = ChatOpenAI(
@@ -17,3 +18,21 @@ print(result)
 
 print("\nCONTENT:")
 print(result.content)
+
+message = HumanMessage(
+    content="What is Amazon ECS?"
+)
+
+print("MESSAGE:")
+print(message)
+
+print("\nMESSAGE TYPE:")
+print(type(message))
+
+result = llm.invoke([message])
+
+print("\nAI RESPONSE:")
+print(result)
+
+print("\nAI RESPONSE TYPE:")
+print(type(result))

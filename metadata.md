@@ -38,3 +38,57 @@ The capital of France is Paris.
 - Output/completion tokens: 7
 - Total tokens: 21
 
+---
+
+## Prompt Engineering Example
+
+```text
+SystemMessage
+      │
+      │ "You are an AWS expert..."
+      ▼
+HumanMessage
+      │
+      │ "What is Amazon ECS?"
+      ▼
+     LLM
+      │
+      ▼
+AIMessage
+      │
+      │ AWS-focused answer
+      ▼
+    Output
+```
+
+### Example prompt
+
+```text
+System:
+You are an AWS architect. Explain concepts using production architecture examples.
+
+Human:
+What is ECS?
+```
+
+This is the foundation of prompt engineering: controlling the model's behavior and context through carefully designed instructions.
+
+## LangChain message flow
+
+```text
+LangChain
+    │
+    ▼
+Messages
+    │
+    ├── SystemMessage
+    ├── HumanMessage
+    └── AIMessage
+            │
+            ▼
+            LLM
+```
+
+```text
+SystemMessage ──► HumanMessage ──► LLM ──► AIMessage
+```
